@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TictactoeComponent } from './components/tictactoe/tictactoe.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
+import { NgModel } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginComponent } from './components/login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgModel
   ],
   providers: [],
   bootstrap: [AppComponent]

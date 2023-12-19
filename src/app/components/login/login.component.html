@@ -1,1 +1,8 @@
-<p>login works!</p>
+<div class="container">
+    <h1>NEW USER</h1>
+    <form (ngSubmit)="addUser()">
+        <p>name</p>
+        <input name="name" [(ngModel)]="name" />
+        <button type="submit">Jugar</button>
+    </form>
+</div>
