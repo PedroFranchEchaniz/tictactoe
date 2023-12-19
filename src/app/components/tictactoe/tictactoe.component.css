@@ -1,0 +1,24 @@
+.container {
+    margin: 0 auto;
+    color: rebeccapurple;
+    max-width: 500px;
+    /* Ajusta el ancho máximo del contenedor principal según tus necesidades */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    /* Centra las casillas horizontalmente */
+    margin-bottom: 5px;
+    height: 150px;
+    /* Ajusta la altura de las filas según tus necesidades */
+}
+
+.tile {
+    flex: 1;
+    height: 100%;
+    /* Ajusta la altura de las casillas al 100% de la fila */
+    background-color: lightgray;
+    border: 1px solid black;
+    /* Agrega un borde para visualizar las casillas */
+}
