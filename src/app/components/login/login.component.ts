@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(public userService: UserServiceService) { }
 
   createGame() {
-    this.userService.createUser(this.name);
+
   }
 
   ngOnInit(): void {
@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 
       if (games.length === 0) {
         console.log('No games found');
+        this.userService.createUser(this.name);
       } else {
         console.log('Games found: ', games.join(', '));
         updateDoc();
