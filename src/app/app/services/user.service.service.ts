@@ -20,7 +20,7 @@ export class UserServiceService {
 
   constructor(public firestore: Firestore) { }
 
-  async createUser(name: string) {
+  async createGame(name: string) {
     const docRef = await addDoc(collection(this.firestore, COLLECTION), {
       name: name
     });

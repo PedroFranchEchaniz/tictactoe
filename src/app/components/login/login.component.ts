@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(public userService: UserServiceService) { }
 
-  addUser() {
+  createGame() {
     this.userService.createUser(this.name);
   }
 
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
         console.log('No games found');
       } else {
         console.log('Games found: ', games.join(', '));
+        updateDoc();
       }
     })
   }
