@@ -12,13 +12,17 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment.development';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { HomePageComponent } from './ui/home-page/home-page.component';
+import { GamePageComponent } from './ui/game-page/game-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TictactoeComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent,
+    GamePageComponent
   ],
   imports: [
     BrowserModule,

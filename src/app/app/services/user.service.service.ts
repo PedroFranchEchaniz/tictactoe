@@ -4,6 +4,7 @@ import {
   addDoc,
   collection,
   getDocs,
+  updateDoc,
   query,
   where,
 } from '@angular/fire/firestore';
@@ -20,11 +21,27 @@ export class UserServiceService {
 
   constructor(public firestore: Firestore) { }
 
-  async createGame(name: string) {
-    const docRef = await addDoc(collection(this.firestore, COLLECTION), {
-      name: name
-    });
+  async createGameIfNotExists(name: string) {
+    const emptyGameQuery = query(collection(this.firestore, COLLECTION), where('player2', '==', null));
+    const emptyGameSnapshot = await getDocs(emptyGameQuery);
+
+    if (emptyGameSnapshot.empty) {
+
+      await addDoc(collection(this.firestore, COLLECTION), {
+        player1: name,
+        player2: null,
+        winner: null
+      });
+    } else {
+
+      emptyGameSnapshot.forEach((doc) => {
+        const gameId = doc.id;
+        updateDoc(doc.ref, { player2: name });
+      });
+    }
   }
+
+
 
   getEmptyGame() {
     return query(collection(this.firestore, COLLECTION),
