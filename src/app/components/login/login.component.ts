@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
 
   constructor(public userService: UserServiceService) { }
 
+  addUser() {
+    this.userService.createUser(this.name);
+  }
+
   ngOnInit(): void {
     const query = this.userService.getEmptyGame();
     const unsubscribe = onSnapshot(query, (querySnapshot) => {
@@ -29,7 +33,5 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  addUser() {
-    this.userService.createUser(this.name);
-  }
+
 }

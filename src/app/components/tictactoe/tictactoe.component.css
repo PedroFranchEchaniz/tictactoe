@@ -1,19 +1,4 @@
-.container {
-    margin: 0 auto;
-    color: rebeccapurple;
-    max-width: 500px;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-    height: 150px;
-}
-
-.tile {
-    flex: 1;
-    height: 100%;
-    background-color: lightgray;
-    border: 1px solid black;
+.h78 {
+    height: 200px;
+    cursor: pointer;
 }
